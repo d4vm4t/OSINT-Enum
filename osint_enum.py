@@ -119,7 +119,7 @@ def fetch_robots(domain):
     return uniq(paths)
 
 def fetch_sitemap_urls(domain, hard_limit=2000):
-    # Prueba ubicaciones tÃ­picas y sigue Ã­ndices
+    # Prueba ubicaciones tí­picas y sigue í­ndices
     candidates = [
         f"https://{domain}/sitemap.xml",
         f"https://{domain}/sitemap_index.xml",
@@ -270,7 +270,7 @@ def build_report(domain, outdir, whois_txt, ns_list, mx_list, crt_subs, wb_rows,
 # --------------------------
 
 def main():
-    ap = argparse.ArgumentParser(description="EnumeraciÃ³n OSINT (pasiva y activa) sobre un dominio y generaciÃ³n de reporte.md")
+    ap = argparse.ArgumentParser(description="Enumeración OSINT (pasiva y activa) sobre un dominio y generación de reporte.md")
     ap.add_argument("domain", help="Dominio objetivo (ej: ejemplo.com)")
     ap.add_argument("-o", "--out", default="salida_osint", help="Directorio de salida (por defecto: salida_osint)")
     args = ap.parse_args()
@@ -291,7 +291,7 @@ def main():
     # --- Activa ---
     with tempfile.TemporaryDirectory() as tmpd:
         act_subs = sublist3r_run(domain, tmpd)
-    # Union con crt.sh para mÃ¡s cobertura
+    # Union con crt.sh para más cobertura
     all_subs = uniq(list(act_subs) + list(crt_subs))
     # Resolver IPs
     sub_ip_rows = []
@@ -327,3 +327,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
